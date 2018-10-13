@@ -1,1 +1,2 @@
+#该命令即可将~/.spacemacs.d/目录下的private-layers layer指向到~/.emacs.d/private/private-layers
 ln -s ~/.spacemacs.d/private-layers  ~/.emacs.d/private/
