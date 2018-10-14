@@ -454,15 +454,18 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (setq powerline-default-separator 'slant)
-
   ;; 启用时间显示设置，在minibuffer上面的那个杠上
   (display-time-mode t)
   ;; 使用24小时制
   (setq display-time-24hr-format t)
   (display-battery-mode t)
 
-)
+  ;;shell ls 添加颜色支持
+  (autoload 'ansi-color-for-comint-mode-on 'ansi-color nil t)
+  (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on t)
+  )
+
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -470,6 +473,7 @@ before packages are loaded."
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
+
 This function is called at the very end of Spacemacs initialization."
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
